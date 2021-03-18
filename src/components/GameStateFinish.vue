@@ -9,6 +9,7 @@
         <path
           class="cls3"
           id="mouth"
+          v-if="showMouth"
           d="M51,97s6,10,23,10S95,97,95,97"
           transform="translate(-8.5 -5.5)"
         />
@@ -22,21 +23,29 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { mapState } from "vuex";
-import gsap from 'gsap';
+import gsap from "gsap";
 
 export default defineComponent({
+  data() {
+    return {
+      showMouth: false,
+    };
+  },
   computed: {
     ...mapState(["uiState"]),
   },
-  mounted(){
-    if(this.uiState=="lost") {
-      gsap.to("#mouth", {
-        duration:1,
-        scaleY:-1,
-        transformOrigin:'50% 50%'
-      });
-    }
-  }
+  mounted() {
+    this.showMouth = true;
+    setTimeout(() => {
+      if (this.uiState == "lost") {
+        gsap.to("#mouth", {
+          duration: 1,
+          scaleY: -1,
+          transformOrigin: "50% 50%",
+        });
+      }
+    }, 1);
+  },
 });
 </script>
 
