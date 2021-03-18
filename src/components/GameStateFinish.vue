@@ -31,7 +31,7 @@ export default defineComponent({
   mounted(){
     if(this.uiState=="lost") {
       gsap.to("#mouth", {
-        duration:0.5,
+        duration:1,
         scaleY:-1,
         transformOrigin:'50% 50%'
       });
