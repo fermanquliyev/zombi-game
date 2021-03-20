@@ -1,4 +1,6 @@
-# alien-zombie-game
+# My alien-zombie-game created using VueJs 3.x, Vuex store.
+
+Demo: https://ferman-zombi.netlify.app
 
 ## Project setup
 ```
